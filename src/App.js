@@ -21,21 +21,21 @@ function App() {
   return (
     <div className="App">
       <ProductContext.Provider value={{ products, addItem }}>
-        <CartContext.Provider>
+        <CartContext.Provider value={cart}>
           <Navigation cart={cart} />
         </CartContext.Provider>
       </ProductContext.Provider>
 
       {/* Routes */}
       <ProductContext.Provider value={{ products, addItem }}>
-        <CartContext.Provider>
+        <CartContext.Provider value={cart}>
           <Route exact path="/" component={Products} />
           />
         </CartContext.Provider>
       </ProductContext.Provider>
 
       <ProductContext.Provider value={{ products, addItem }}>
-        <CartContext.Provider>
+        <CartContext.Provider value={cart}>
           <Route path="/cart" component={ShoppingCart} />
         </CartContext.Provider>
       </ProductContext.Provider>
